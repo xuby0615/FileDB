@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * 文件数据库操作类
  */
@@ -38,7 +38,7 @@ class File
      */
     public function obj2array($object = 0)
     {
-        if(is_object($object))
+        if(is_object($object) || is_array($object))
         {
             $array = array();
             foreach($object as $attr => $value)
@@ -268,7 +268,7 @@ class File
             {
                 throw new Exception(self::error('db_table'));
             }
-            return (object)$result;
+            return $result;
         }
         catch (exception $e)
         {
